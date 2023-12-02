@@ -157,6 +157,12 @@ export function isICT(process: any): boolean {
             process.titulares?.forEach((holder: any) => {
                 match = regex.test(holder.nomeCompleto) ? true : match;
             });
+
+            if (match == false) {
+                process.titulares?.forEach((holder: any) => {
+                    match = regex.test(holder) ? true : match;
+                });
+            }
         });
     } else {
         match = true;
